@@ -4,6 +4,7 @@ php:
   - "5.3"
 
 before_script:
+    - cp .travis/config_si.php `pwd`
     - sudo apt-get install apache2
     - sudo a2enmod actions
     - sudo a2enmod rewrite
@@ -13,3 +14,4 @@ before_script:
     - sudo service apache2 restart
     - mysql -u root -e "CREATE USER 'sugarcrm'@'localhost' IDENTIFIED BY 'sugarcrm'"
     - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'sugarcrm'@'localhost' WITH GRANT OPTION;"
+    - curl 'http://localhost/install.php'
