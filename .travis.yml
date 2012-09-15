@@ -17,4 +17,4 @@ before_script:
     - curl 'http://localhost/install.php'
     - cd tests
 
-script: phpunit --configuration phpunit.xml
+script: phpunit
