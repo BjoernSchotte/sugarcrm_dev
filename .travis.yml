@@ -14,7 +14,7 @@ before_script:
     - sudo service apache2 restart
     - mysql -u root -e "CREATE USER 'sugarcrm'@'localhost' IDENTIFIED BY 'sugarcrm'"
     - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'sugarcrm'@'localhost' WITH GRANT OPTION;"
-    - curl 'http://localhost/install.php'
+    - curl 'http://localhost/install.php?goto=SilentInstall&cli=true'
     - cd tests
 
 script: ./phpunit.php --verbose -c phpuc.xml
