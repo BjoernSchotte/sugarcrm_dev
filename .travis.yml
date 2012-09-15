@@ -17,4 +17,4 @@ before_script:
     - curl 'http://localhost/install.php?goto=SilentInstall&cli=true'
     - cd tests
 
-script: ./phpunit.php --verbose -c phpuc.xml
+script: ./phpunit.php --verbose SugarTestHelper
