@@ -17,4 +17,4 @@ before_script:
     - curl 'http://localhost/install.php'
     - cd tests
 
-script: phpunit --verbose --coverage-text
+script: ./phpunit.php --verbose --coverage-text
