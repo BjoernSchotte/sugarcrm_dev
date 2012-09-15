@@ -17,4 +17,4 @@ before_script:
     - curl 'http://localhost/install.php'
     - cd tests
 
-script: ./phpunit.php --verbose
+script: ./phpunit.php --verbose -c phpuc.xml
