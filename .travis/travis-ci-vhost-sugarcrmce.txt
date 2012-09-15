@@ -21,6 +21,7 @@
                 Allow from all
         </Directory>
 
+        php_value error_reporting "E_ALL ^ E_STRICT"
         ErrorLog ${APACHE_LOG_DIR}/error.log
 
         # Possible values include: debug, info, notice, warn, error, crit,
