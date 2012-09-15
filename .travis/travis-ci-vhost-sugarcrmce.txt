@@ -27,6 +27,7 @@
         # alert, emerg.
         LogLevel warn
 
+        php_value error_reporting 30719
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 </VirtualHost>
