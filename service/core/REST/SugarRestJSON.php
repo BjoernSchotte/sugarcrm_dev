@@ -56,7 +56,14 @@ class SugarRestJSON extends SugarRestSerialize{
 		if (isset($this->faultObject)) {
 			$this->generateFaultResponse($this->faultObject);
 		} else {
+			// JSONP support
+                        if ( isset($_GET["jsoncallback"]) ) {
+                                echo $_GET["jsoncallback"] . "(";
+                        }
 			echo $json->encode($input);
+                        if ( isset($_GET["jsoncallback"]) ) {
+                                echo ")";
+                        }
 		}
 	} // fn
 
@@ -98,7 +105,14 @@ class SugarRestJSON extends SugarRestSerialize{
 		$GLOBALS['log']->error($error);
 		$json = getJSONObj();
 		ob_clean();
+                // JSONP support
+                if ( isset($_GET["jsoncallback"]) ) {
+                        echo $_GET["jsoncallback"] . "(";
+                }
 		echo $json->encode($errorObject);
+                if ( isset($_GET["jsoncallback"]) ) {
+                        echo ")";
+                }
 	} // fn
 
 
